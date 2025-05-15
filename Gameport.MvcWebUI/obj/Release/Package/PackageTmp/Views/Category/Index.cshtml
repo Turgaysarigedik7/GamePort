@@ -1,0 +1,63 @@
+﻿@model Gameport.MvcWebUI.Models.CategoryListViewModel 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Project/css/MyStyle.css" rel="stylesheet" type="text/css" />
+
+<body>
+    <section class="category_content">
+        <div class="category_left">
+            <div id="mySidenav" class="sidenav">
+                <ul>
+                    <li><a href="#">League of Legends</a></li>
+                    <li> <a href="#">Dota 2</a></li>
+                    <li> <a href="#">PubG</a></li>
+                    <li> <a href="#">Fornite</a></li>
+                    <li> <a href="#">CS:GO </a></li>
+                    <li> <a href="#">Overwatch </a></li>
+                </ul>
+            </div>
+
+            <div id="main">
+                <span id="canvas" style="font-size:30px;cursor:pointer" onclick="openNav()">
+                    <img src="~/Content/Project/images/menu-outline.svg" height="50px">
+                </span>
+            </div>
+        </div>
+        <div class="category_right">
+            <div id="categoryList">
+                <div class="cards">
+                    @foreach (var category in Model.Categories)
+                    {
+                        <a href="#" class="card">
+                            <img id="card-img" style="position: absolute;" src="~/Content/Project/images/@category.Category_Poster">
+                            <img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png">
+                            <h6>@category.CategoryName</h6>
+                        </a>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+   
+   
+    <script>
+        function openNav() {
+            if (document.getElementById("mySidenav").style.width == "0px") {
+                document.getElementById("mySidenav").style.width = "250px";
+                document.getElementById("main").style.left = "32%";
+
+            }
+            else {
+                document.getElementById("mySidenav").style.width = "0px";
+                document.getElementById("main").style.left = "0";
+            }
+
+        }
+    </script>
+    @*<script src="~/Content/lib/Bootstrap/js/bootstrap.bundle.min.js"></script>*@
+</body>

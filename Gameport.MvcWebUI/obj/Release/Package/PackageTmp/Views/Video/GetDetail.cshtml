@@ -1,0 +1,41 @@
+﻿@model Gameport.MvcWebUI.Models.VideoDetailViewModel
+@{
+    ViewBag.Title = "GetDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Project/css/MyStyle.css" rel="stylesheet" type="text/css" />
+<style>
+</style>
+
+<body>
+    <header id="movieHeader">
+        <a class="logo"><img src="~/Content/Project/images/logo.png"></a>
+
+    </header>
+    <div class="banner">
+        <div class="content">
+            <h2>Put on a<span>Happy</span>face</h2>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Labore voluptate corporis
+                ducimus magnam possimus commodi dicta odio
+                suscipit! Dolorum sapiente, error eligendi distinctio
+                excepturi vero aperiam porro ex. Laudantium, vitae!
+            </p>
+            <a href="/Video/Index/@Model.ID" class="play"><img src="~/Content/Project/images/play.png">Watch</a>
+            <div class="slide"> </div>
+            <ul class="sci">
+                <li><a href="#"><img src="~/Content/Project/images/facebook.png"></a></li>
+                <li><a href="#"><img src="~/Content/Project/images/twitter.png"></a></li>
+                <li><a href="#"><img src="~/Content/Project/images/instagram.png"></a></li>
+
+            </ul>
+
+        </div>
+    </div>
+    <br />
+  
+    <!-- Swiper JS -->
+    
+    <script src="~/Content/Project/js/scripts.js"></script>
+</body>

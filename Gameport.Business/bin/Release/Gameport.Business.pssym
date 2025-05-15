@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Symbols LinesOfCode="45" PostSharpLinesOfCode="0" xmlns="http://schemas.postsharp.org/2.0/symbols">
+  <Class Class="#1=T:[Gameport.Core]Gameport.Core.Aspect.Postsharp.AuthorizationAspects.SecuredOperaiton">
+    <Instance Declaration="#2=T:[Gameport.Business]Gameport.Business.Concrete.Managers.CategoryManager" Id="4460384b12f83a29">
+      <Target Target="#3=M:[Gameport.Business]Gameport.Business.Concrete.Managers.CategoryManager::#ctor(Gameport.DataAccess.Abstract.ICategoryDal)">
+        <JoinPoint Advising="#1" Description="#4=Wrapped by advice(s) OnEntry, OnSuccess, OnException, OnExit" Ordinal="0" />
+      </Target>
+      <Target Target="#5=M:[Gameport.Business]Gameport.Business.Concrete.Managers.CategoryManager::Add(Gameport.Entities.Concrete.Category)">
+        <JoinPoint Advising="#1" Description="#4" />
+      </Target>
+      <Target Target="#6=M:[Gameport.Business]Gameport.Business.Concrete.Managers.CategoryManager::Delete(Gameport.Entities.Concrete.Category)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="2" />
+      </Target>
+      <Target Target="#7=M:[Gameport.Business]Gameport.Business.Concrete.Managers.CategoryManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="3" />
+      </Target>
+      <Target Target="#8=M:[Gameport.Business]Gameport.Business.Concrete.Managers.CategoryManager::GetList()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="4" />
+      </Target>
+      <Target Target="#9=M:[Gameport.Business]Gameport.Business.Concrete.Managers.CategoryManager::Update(Gameport.Entities.Concrete.Category)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="5" />
+      </Target>
+    </Instance>
+    <Instance Declaration="#10=T:[Gameport.Business]Gameport.Business.Concrete.Managers.VideoManager" Id="4460384b4227840a">
+      <Target Target="#11=M:[Gameport.Business]Gameport.Business.Concrete.Managers.VideoManager::#ctor(Gameport.DataAccess.Abstract.IVideoDal)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="6" />
+      </Target>
+      <Target Target="#12=M:[Gameport.Business]Gameport.Business.Concrete.Managers.VideoManager::Add(Gameport.Entities.Concrete.Video)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="7" />
+      </Target>
+      <Target Target="#13=M:[Gameport.Business]Gameport.Business.Concrete.Managers.VideoManager::Delete(Gameport.Entities.Concrete.Video)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="8" />
+      </Target>
+      <Target Target="#14=M:[Gameport.Business]Gameport.Business.Concrete.Managers.VideoManager::GetById(System.Int32)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="9" />
+      </Target>
+      <Target Target="#15=M:[Gameport.Business]Gameport.Business.Concrete.Managers.VideoManager::GetList(System.Linq.Expressions.Expression{[mscorlib]System.Func{[mscorlib]System.Threading.Tasks.Task,System.Boolean}})">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="10" />
+      </Target>
+      <Target Target="#16=M:[Gameport.Business]Gameport.Business.Concrete.Managers.VideoManager::GetVideoDetails()">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="11" />
+      </Target>
+      <Target Target="#17=M:[Gameport.Business]Gameport.Business.Concrete.Managers.VideoManager::Update(Gameport.Entities.Concrete.Video)">
+        <JoinPoint Advising="#1" Description="#4" Ordinal="12" />
+      </Target>
+    </Instance>
+  </Class>
+  <Annotation Target="#18=M:[Gameport.Core]Gameport.Core.Aspect.Postsharp.AuthorizationAspects.SecuredOperaiton::OnEntry(PostSharp.Aspects.MethodExecutionArgs)" Arguments="#19=2" Description="#20=PostSharp estimates that 2 line(s) of code are saved every time this advice is applied. Use the [LinesOfCodeAvoided] attribute on the aspect or specify the LinesOfCodeAvoided property on the advice attribute to override this value." />
+  <Annotation Target="#21=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnSuccess([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#19" Description="#20" />
+  <Annotation Target="#22=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnExit([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#19" Description="#20" />
+  <Annotation Target="#23=M:[PostSharp]PostSharp.Aspects.OnMethodBoundaryAspect::OnException([PostSharp]PostSharp.Aspects.MethodExecutionArgs)" Arguments="#19" Description="#20" />
+</Symbols>

@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "SingUp";
+    Layout =null;
+}
+<link href="~/Content/Project/css/MyStyle.css" rel="stylesheet" />
+
+<html>
+<head>
+
+    <style>
+       
+        .box {
+            width: 27%;
+            padding: 40px;
+            position: relative;
+            top: 40%;
+            left: 50%;
+            margin-bottom:6%;
+            transform: translate(-50%,-50%);
+            background: #191919;
+            text-align: center;
+        }
+
+            .box h1 {
+                color: white;
+                text-transform: uppercase;
+                font-weight: 500;
+            }
+
+            .box input[type="text"], .box input[type="password"] ,.box input[type="email"]{
+                border: 0;
+                background: none;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                border: 2px solid #3498db;
+                padding: 14px 10px;
+                width: 200px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+            }
+
+                .box input[type="text"]:focus, .box input[type="password"]:focus, .box input[type="email"]:focus{
+                    width: 280px;
+                    border-color: #2ecc71;
+                }
+
+            .box input[type="submit"] {
+                border: 0;
+                background: none;
+                display: block;
+                margin: 20px auto;
+                text-align: center;
+                border: 2px solid #2ecc71;
+                padding: 14px 40px;
+                outline: none;
+                color: white;
+                border-radius: 24px;
+                transition: 0.25s;
+                cursor: pointer;
+            }
+
+                .box input[type="submit"]:hover {
+                    background: #2ecc71;
+                }
+
+            .box a {
+                font-size: small;
+                color: #fff;
+            }
+        #movieHeader {
+            top: 0;
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <header id="movieHeader">
+        <a class="logo"><img src="~/Content/Project/images/logo.png"></a>
+
+    </header>
+    @using (Html.BeginForm("SingUp", "Account", FormMethod.Post, new { @class = "box" }))
+    {
+        <h1>SING UP</h1>
+        <input type="email" id="email" name="email" placeholder="E-Mail" />
+        <input type="text" id="userName" name="userName" placeholder="User Name">
+        <input type="password" id="password" name="password" placeholder="Password">
+        <a href="#">Did you forget your password?</a>
+        <a href="#">Create Account</a>
+        <input type="submit" value="Login">
+    }
+
+</body>
+</html>
+

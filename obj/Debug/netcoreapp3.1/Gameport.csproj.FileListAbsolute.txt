@@ -1,0 +1,7 @@
+C:\Users\ACER\source\repos\Gameport\obj\Debug\netcoreapp3.1\Gameport.csprojAssemblyReference.cache
+C:\Users\ACER\source\repos\Gameport\obj\Debug\netcoreapp3.1\Gameport.AssemblyInfoInputs.cache
+C:\Users\ACER\source\repos\Gameport\obj\Debug\netcoreapp3.1\Gameport.AssemblyInfo.cs
+C:\Users\ACER\source\repos\Gameport\obj\Debug\netcoreapp3.1\Gameport.csproj.CoreCompileInputs.cache
+C:\Users\ACER\source\repos\Gameport\obj\Debug\netcoreapp3.1\Gameport.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\ACER\source\repos\Gameport\obj\Debug\netcoreapp3.1\Gameport.RazorAssemblyInfo.cache
+C:\Users\ACER\source\repos\Gameport\obj\Debug\netcoreapp3.1\Gameport.RazorAssemblyInfo.cs

@@ -1,0 +1,242 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;
+            overflow: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            align-items: center;
+            width: 100%;
+            height: 30px;
+            min-height: 70px;
+            align-items: center;
+            justify-content: space-between;
+            background-color: transparent;
+            align-self: center;
+            z-index: 9;
+        }
+
+            .navbar li {
+                margin: 0 50px;
+                list-style-type: none;
+                display: flex;
+                flex-direction: row;
+            }
+
+                .navbar li:nth-child(2) {
+                    margin-top: -10px;
+                    margin-right: 70px;
+                }
+
+        .logo img {
+            width: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            align-self: center;
+        }
+
+        .buttons {
+            background-color: #e50914;
+            padding: 9px 17px;
+            color: white;
+            display: flex;
+            flex-direction: row;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 30px;
+            border: none;
+        }
+
+        #myVideo {
+            position: absolute;
+            top: -1%;
+            min-width: 100%;
+            min-height: 100%;
+        }
+
+        .content {
+            position: fixed;
+            background: rgba(0, 0, 0, 0);
+            color: #f1f1f1;
+            width: 100%;
+            padding: 10%;
+            margin: 10% auto;
+        }
+
+        #myBtn {
+            width: 200px;
+            font-size: 18px;
+            padding: 10px;
+            border: none;
+            background: #000;
+            color: #fff;
+            cursor: pointer;
+        }
+
+            #myBtn:hover {
+                background: #ddd;
+                color: black;
+            }
+
+        .main {
+            width: 100%;
+            margin-top: -35%;
+            background-size: cover;
+            align-items: center;
+            overflow-x: hidden;
+            justify-content: center;
+            display: flex;
+            background-position: center;
+            min-height: 710px;
+        }
+
+        .area {
+            color: white;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+            .area h1 {
+                font-size: 60px;
+                word-spacing: 15px;
+                line-height: 75px;
+            }
+
+            .area h3 {
+                margin-top: -30px;
+                font-size: 27px;
+                font-weight: normal;
+            }
+
+        .search {
+            width: 150%;
+            background-color: none;
+            min-height: 80px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        .box {
+            width: 100%;
+            min-height: 65px;
+            padding-left: 3%;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 30px 0 0 30px;
+            border: none;
+        }
+
+        .try {
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            background-color: #e50914;
+            min-height: 65px;
+            width: 70%;
+            font-size: 27px;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            -webkit-border-radius: 20px;
+            -moz-border-radius: 20px;
+            border-radius: 0 30px 30px 0;
+            border: none;
+        }
+
+        .area h4 {
+            margin-top: 10px;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <li class="logo"><img src="~/Content/Project/images/Logo-removebg-preview.png"></li>
+        <a href="/Account/SingIn" style="text-decoration: none;"><li class="buttons">Sign In</li></a>
+
+    </div>
+    <video autoplay muted loop id="myVideo">
+        <source src="~/Content/Project/Videos/League of Legends Gameplay Trailer by NiceTryIan - Community Collab.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div class="content">
+        <div class="main">
+            <div class="area">
+                <h1>Unlimited movies, TV <br>shows, and more.</h1>
+                <h3>
+                    Watch anywhere. Cancel anytime.
+                </h3>
+
+                <div class="search">
+                    <input type="text" class="box" placeholder="Email">
+                    <a href="/Account/SingUp" class="try">
+                        Try 30 days free <i class="fas fa-chevron-right"></i>
+
+
+                    </a>
+                </div>
+                <h4>
+                    Ready to watch? Enter your email to create or access your account
+                </h4>
+            </div>
+        </div>
+
+
+        <!-- <button id="myBtn" onclick="myFunction()">Pause</button> -->
+    </div>
+
+    <script>
+        var video = document.getElementById("myVideo");
+        var btn = document.getElementById("myBtn");
+
+        function myFunction() {
+            if (video.paused) {
+                video.play();
+                btn.innerHTML = "Pause";
+            } else {
+                video.pause();
+                btn.innerHTML = "Play";
+            }
+        }
+    </script>
+
+</body>
+</html>

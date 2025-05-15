@@ -1,0 +1,238 @@
+﻿@model  Gameport.MvcWebUI.Models.VideoListViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/lib/Bootstrap/css/bootstrap-reboot.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.6.3/css/ionicons.min.css" rel="stylesheet" />
+<link href="~/Content/lib/Owl.Carousel/css/owl.carousel.min.css" rel="stylesheet" />
+
+<!-- Link Swiper's CSS -->
+<link href="~/Content/lib/Swiper/css/swiper-bundle.css" rel="stylesheet" />
+<link href="~/Content/Project/css/Mystyle.css" rel="stylesheet" type="text/css" />
+<!-- Swiper -->
+
+<div class="singleContainer swiper-container">
+    <div class="singleWraper swiper-wrapper ">
+        @foreach (var item in Model.Categories)
+        {
+        <a href="/VideoDetail/Index" class="swiper-slide" style="position: relative;">
+            <img id="single-img" style="min-height: 100%; position: absolute;" class="img-fluid card-img" src="~/Content/Project/images/@item.Category_Slider">
+            <!-- Play Icon Start -->
+            <div style="opacity:1;" id="card__play" href="#" class="card__play">
+                <i class="icon ion-ios-play"></i>
+            </div>
+            <!-- Play Icon End -->
+            <div style="position: absolute; left: 1%; width:40%; ">
+                <h3 style="color: white;">@item.CategoryName</h3>
+                <h5 style="color:white; font-size:medium">Günün şafağına yolculuk</h5>
+            </div>
+        </a>
+        }
+    </div>
+</div>
+
+
+
+<section style="margin-top: -8%; padding: 2%;">
+    <div class="netflix-slider" style="padding-left: 5%; padding-right: 5%;">
+        <div class="categoryContainer swiper-container">
+            <div class="cardWraper swiper-wrapper">
+                @foreach (var video in Model.Categories)
+                {
+                <a href="/VideoDetail/Index/@video.CategoryID" class="swiper-slide">
+                    <img class="card-img" src="/Content/Project/images/@video.Picture" alt="Movie Title">
+                    <!-- Play Icon Start -->
+                    <div id="card__play" href="#" class="card__play">
+                        <i class="icon ion-ios-play"></i>
+                    </div>
+                    <!-- Play Icon End -->
+                    <h4 class="card-play" style="position: absolute; bottom: 10%; color: white;">@video.CategoryName</h4>
+                </a>
+                }
+            </div>
+    <!-- Add Pagination -->
+    <!--<div class="swiper-pagination"></div>-->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+    <!---Panel start-->
+    <div>
+        <div id="cart" class="container-fluid">
+            <div id="cartTeamGroupRow" class="row">
+                <a href="#" id="cartTeamGroupCol-lg-6" class="col-lg-6">
+                    <img id="cartTeam" src="~/Content/Project/images/Team1.jpg">
+                </a>
+                <a href="#" id="cartTeamGroupCol-lg-6" class="col-lg-6">
+                    <img id="cartTeam" src="~/Content/Project/images/Team2.jpg">
+                </a>
+            </div>
+
+
+            <div id="cartTeamGroupRow" class="row">
+                <a href="#" id="cartTeamGroupCol-lg-6" class="col-lg-6">
+                    <img id="cartTeam" src="~/Content/Project/images/Team3.jpg">
+                </a>
+                <a href="#" id="cartTeamGroupCol-lg-6" class="col-lg-6">
+                    <img id="cartTeam" src="~/Content/Project/images/Team4.jpg">
+                </a>
+            </div>
+        </div>
+    </div>
+    <!---Panel end-->
+
+    <div class="netflix-slider">
+        <h4>League Of Legends</h4>
+        <div class="cardContainer swiper-container">
+            <div class="cardWraper swiper-wrapper">
+                @foreach (var video in Model.Videos.Where(m => m.CategoryID == 1))
+                {
+                <a href="/Video/GetDetail/@video.VideoID" class="swiper-slide">
+                    <img class="card-img" src="/Content/Project/images/@video.Poster" alt="Movie Title">
+                    <!-- Play Icon Start -->
+                    <div id="card__play" href="#" class="card__play">
+                        <i class="icon ion-ios-play"></i>
+                    </div>
+                    <!-- Play Icon End -->
+                </a>
+                   
+                }
+            </div>
+            <!-- Add Pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <div class="netflix-slider">
+        <h4>Dota 2</h4>
+        <div class="cardContainer swiper-container">
+            <div class="cardWraper swiper-wrapper">
+                @foreach (var video in Model.Videos.Where(m => m.CategoryID == 2))
+                {
+                <a href="/VideoDetail/Index/@video.VideoID" class="swiper-slide">
+                    <img class="card-img" src="/Content/Project/images/@video.Poster" alt="Movie Title">
+                    <!-- Play Icon Start -->
+                    <div id="card__play" href="#" class="card__play">
+                        <i class="icon ion-ios-play"></i>
+                    </div>
+                    <!-- Play Icon End -->
+                </a>
+                }
+            </div>
+            <!-- Add Pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <div class="netflix-slider">
+        <h4>Fortnite</h4>
+        <div class="cardContainer swiper-container">
+            <div class="cardWraper swiper-wrapper">
+                @foreach (var video in Model.Videos.Where(m => m.CategoryID == 3))
+                {
+                <a href="/VideoDetail/Index/@video.VideoID" class="swiper-slide">
+                    <img class="card-img" src="/Content/Project/images/@video.Poster" alt="Movie Title">
+                    <!-- Play Icon Start -->
+                    <div id="card__play" href="#" class="card__play">
+                        <i class="icon ion-ios-play"></i>
+                    </div>
+                    <!-- Play Icon End -->
+                </a>
+                }
+            </div>
+            <!-- Add Pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <div class="netflix-slider">
+        <h4>CS : GO</h4>
+        <div class="cardContainer swiper-container">
+            <div class="cardWraper swiper-wrapper">
+                @foreach (var video in Model.Videos.Where(m => m.CategoryID == 4))
+                {
+                <a href="/VideoDetail/Index/@video.VideoID" class="swiper-slide">
+                    <img class="card-img" src="/Content/Project/images/@video.Poster" alt="Movie Title">
+                    <!-- Play Icon Start -->
+                    <div id="card__play" href="#" class="card__play">
+                        <i class="icon ion-ios-play"></i>
+                    </div>
+                    <!-- Play Icon End -->
+                </a>
+                }
+            </div>
+            <!-- Add Pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+    <div class="netflix-slider">
+        <h4>Overwatch</h4>
+        <div class="cardContainer swiper-container">
+            <div class="cardWraper swiper-wrapper">
+                @foreach (var video in Model.Videos.Where(m => m.CategoryID == 5))
+                {
+                <a href="/VideoDetail/Index/@video.VideoID" class="swiper-slide">
+                    <img class="card-img" src="/Content/Project/images/@video.Poster" alt="Movie Title">
+                    <!-- Play Icon Start -->
+                    <div id="card__play" href="#" class="card__play">
+                        <i class="icon ion-ios-play"></i>
+                    </div>
+                    <!-- Play Icon End -->
+                </a>
+                }
+            </div>
+            <!-- Add Pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+
+
+    <div class="netflix-slider">
+        <h4>Arena Of Valor</h4>
+        <div class="cardContainer swiper-container">
+            <div class="cardWraper swiper-wrapper">
+                @foreach (var video in Model.Videos.Where(m => m.CategoryID == 6))
+                {
+                <a href="/VideoDetail/Index/@video.VideoID" class="swiper-slide">
+                    <img class="card-img" src="/Content/Project/images/@video.Poster" alt="Movie Title">
+                    <!-- Play Icon Start -->
+                    <div id="card__play" href="#" class="card__play">
+                        <i class="icon ion-ios-play"></i>
+                    </div>
+                    <!-- Play Icon End -->
+                </a>
+                }
+            </div>
+            <!-- Add Pagination -->
+            <!-- <div class="swiper-pagination"></div> -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- Swiper JS -->
+<script src="~/Content/lib/Swiper/js/swiper-bundle.min.js"></script>
+<script src="~/Content/Project/js/scripts.js"></script>
+
+
+
+
+

@@ -1,0 +1,491 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{150DBFE1-122B-4872-B8C7-396CEFD71235}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gameport.MvcWebUI</RootNamespace>
+    <AssemblyName>Gameport.MvcWebUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44318</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <DontImportPostSharp>True</DontImportPostSharp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.5\lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.11.4\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.1.1.11\lib\net46\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Compression.LZ4.Streams.1.1.11\lib\net46\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.6.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>..\packages\K4os.Hash.xxHash.1.0.6\lib\net46\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.1.1\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.1.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google, Version=4.1.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.1.1\lib\net45\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.12\lib\net45\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.12.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.12\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="PostSharp, Version=4.2.17.0, Culture=neutral, PublicKeyToken=b13fd38b8f9c99d7, processorArchitecture=MSIL">
+      <HintPath>..\packages\PostSharp.4.2.17\lib\net35-client\PostSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Renci.SshNet, Version=2020.0.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2020.0.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.4.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\lib\Bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\lib\Bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\lib\Bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\lib\Bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\lib\Bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\lib\Font-Awesome\css\font-awesome.min.css" />
+    <Content Include="Content\lib\Ionicons\css\ionicons.min.css" />
+    <Content Include="Content\lib\Jquery\css\jquery.mCustomScrollbar.min.css" />
+    <Content Include="Content\lib\Jquery\js\jquery-3.3.1.min.js" />
+    <Content Include="Content\lib\Jquery\js\jquery.mCustomScrollbar.min.js" />
+    <Content Include="Content\lib\Jquery\js\jquery.morelines.min.js" />
+    <Content Include="Content\lib\Jquery\js\jquery.mousewheel.min.js" />
+    <Content Include="Content\lib\Magnific\js\jquery.magnific-popup.min.js" />
+    <Content Include="Content\lib\Magnific\css\magnific-popup.css" />
+    <Content Include="Content\lib\Owl.Carousel\css\owl.carousel.min.css" />
+    <Content Include="Content\lib\Owl.Carousel\js\owl.carousel.min.js" />
+    <Content Include="Content\lib\Plyr\css\plyr.css" />
+    <Content Include="Content\lib\Plyr\js\plyr.min.js" />
+    <Content Include="Content\lib\Select\js\select2.min.js" />
+    <Content Include="Content\lib\Select\css\select2.min.css" />
+    <Content Include="Content\lib\Swiper\css\swiper-bundle.css" />
+    <Content Include="Content\lib\Swiper\js\swiper-bundle.min.js" />
+    <Content Include="Content\Project\css\admin.css" />
+    <Content Include="Content\Project\css\main.css" />
+    <Content Include="Content\Project\css\MyStyle.css" />
+    <Content Include="Content\Project\css\style2.css" />
+    <Content Include="Content\Project\css\videoStyle.css" />
+    <Content Include="Content\Project\icons\apple-touch-icon-114x114.png" />
+    <Content Include="Content\Project\icons\apple-touch-icon-144x144.png" />
+    <Content Include="Content\Project\icons\apple-touch-icon-72x72.png" />
+    <Content Include="Content\Project\icons\favicon-32x32.png" />
+    <Content Include="Content\Project\images\404.jpg" />
+    <Content Include="Content\Project\images\arena-of-valor-1.jpg" />
+    <Content Include="Content\Project\images\arena-of-valor-10.jpg" />
+    <Content Include="Content\Project\images\arena-of-valor-2.jpg" />
+    <Content Include="Content\Project\images\arena-of-valor-3.jpg" />
+    <Content Include="Content\Project\images\arena-of-valor-4.jpg" />
+    <Content Include="Content\Project\images\arena-of-valor-5.jpg" />
+    <Content Include="Content\Project\images\arena-of-valor-6.jpg" />
+    <Content Include="Content\Project\images\arena-of-valor-7.jpg" />
+    <Content Include="Content\Project\images\arena-of-valor-8.jpg" />
+    <Content Include="Content\Project\images\arena-of-valor-9.jpg" />
+    <Content Include="Content\Project\images\arena-of-valor.jpg" />
+    <Content Include="Content\Project\images\arena-of-valor.png" />
+    <Content Include="Content\Project\images\arena_of_valor-category.jpg" />
+    <Content Include="Content\Project\images\Arena_of_Valor-swiper.jpg" />
+    <Content Include="Content\Project\images\banner-image-206878b0-bdc4-4b73-8c3d-1355d30014e5.jpg" />
+    <Content Include="Content\Project\images\bg-2.jpg" />
+    <Content Include="Content\Project\images\bg-3.jpg" />
+    <Content Include="Content\Project\images\bg.jpg" />
+    <Content Include="Content\Project\images\cart-outline.svg" />
+    <Content Include="Content\Project\images\cart.svg" />
+    <Content Include="Content\Project\images\csgo-1.jpg" />
+    <Content Include="Content\Project\images\csgo-10.jpg" />
+    <Content Include="Content\Project\images\csgo-2.jpg" />
+    <Content Include="Content\Project\images\csgo-3.jpg" />
+    <Content Include="Content\Project\images\csgo-4.jpg" />
+    <Content Include="Content\Project\images\csgo-5.jpg" />
+    <Content Include="Content\Project\images\csgo-6.jpg" />
+    <Content Include="Content\Project\images\csgo-7.jpg" />
+    <Content Include="Content\Project\images\csgo-8.jpg" />
+    <Content Include="Content\Project\images\csgo-9.jpg" />
+    <Content Include="Content\Project\images\csgo-category.jpg" />
+    <Content Include="Content\Project\images\csgo-poster.png" />
+    <Content Include="Content\Project\images\csgo-swiper.jpg" />
+    <Content Include="Content\Project\images\CSGO.jpg" />
+    <Content Include="Content\Project\images\dota2-1.jpg" />
+    <Content Include="Content\Project\images\dota2-10.jpg" />
+    <Content Include="Content\Project\images\dota2-2.jpg" />
+    <Content Include="Content\Project\images\dota2-3.jpg" />
+    <Content Include="Content\Project\images\dota2-4.jpg" />
+    <Content Include="Content\Project\images\dota2-5.jpg" />
+    <Content Include="Content\Project\images\dota2-6.jpg" />
+    <Content Include="Content\Project\images\dota2-7.jpg" />
+    <Content Include="Content\Project\images\dota2-8.jpg" />
+    <Content Include="Content\Project\images\dota2-9.jpg" />
+    <Content Include="Content\Project\images\dota2-category.jpg" />
+    <Content Include="Content\Project\images\dota2-poster.jpg" />
+    <Content Include="Content\Project\images\dota2-poster.png" />
+    <Content Include="Content\Project\images\dota2-swiper.jpg" />
+    <Content Include="Content\Project\images\facebook.png" />
+    <Content Include="Content\Project\images\fortnite-1.jpg" />
+    <Content Include="Content\Project\images\fortnite-10.jpg" />
+    <Content Include="Content\Project\images\fortnite-2.jpg" />
+    <Content Include="Content\Project\images\fortnite-3.jpg" />
+    <Content Include="Content\Project\images\fortnite-4.jpg" />
+    <Content Include="Content\Project\images\fortnite-5.jpg" />
+    <Content Include="Content\Project\images\fortnite-6.jpg" />
+    <Content Include="Content\Project\images\fortnite-7.jpg" />
+    <Content Include="Content\Project\images\fortnite-8.jpg" />
+    <Content Include="Content\Project\images\fortnite-9.jpg" />
+    <Content Include="Content\Project\images\fortnite-category.jpg" />
+    <Content Include="Content\Project\images\fortnite-poster.jpg" />
+    <Content Include="Content\Project\images\fortnite-poster.png" />
+    <Content Include="Content\Project\images\fortnite-swiper.jpg" />
+    <Content Include="Content\Project\images\instagram.png" />
+    <Content Include="Content\Project\images\ios-more.svg" />
+    <Content Include="Content\Project\images\joker.png" />
+    <Content Include="Content\Project\images\league-of-legends-1.jpg" />
+    <Content Include="Content\Project\images\league-of-legends-10.jpg" />
+    <Content Include="Content\Project\images\league-of-legends-2.jpg" />
+    <Content Include="Content\Project\images\league-of-legends-3.jpg" />
+    <Content Include="Content\Project\images\league-of-legends-4.jpg" />
+    <Content Include="Content\Project\images\league-of-legends-5.jpg" />
+    <Content Include="Content\Project\images\league-of-legends-6.jpg" />
+    <Content Include="Content\Project\images\league-of-legends-7.jpg" />
+    <Content Include="Content\Project\images\league-of-legends-8.jpg" />
+    <Content Include="Content\Project\images\league-of-legends-9.jpg" />
+    <Content Include="Content\Project\images\logo-2-removebg-preview.png" />
+    <Content Include="Content\Project\images\Logo-removebg-preview.png" />
+    <Content Include="Content\Project\images\logo.png" />
+    <Content Include="Content\Project\images\logo.svg" />
+    <Content Include="Content\Project\images\logo2.svg" />
+    <Content Include="Content\Project\images\lol-category.jpg" />
+    <Content Include="Content\Project\images\lol-poster.jpg" />
+    <Content Include="Content\Project\images\lol-poster.png" />
+    <Content Include="Content\Project\images\lol-swiper.jpg" />
+    <Content Include="Content\Project\images\lols.jpg" />
+    <Content Include="Content\Project\images\menu-outline.svg" />
+    <Content Include="Content\Project\images\overwatch-1.jpg" />
+    <Content Include="Content\Project\images\overwatch-10.jpg" />
+    <Content Include="Content\Project\images\overwatch-2.jpg" />
+    <Content Include="Content\Project\images\overwatch-3.jpg" />
+    <Content Include="Content\Project\images\overwatch-4.jpg" />
+    <Content Include="Content\Project\images\overwatch-5.jpg" />
+    <Content Include="Content\Project\images\overwatch-6.jpg" />
+    <Content Include="Content\Project\images\overwatch-7.jpg" />
+    <Content Include="Content\Project\images\overwatch-8.jpg" />
+    <Content Include="Content\Project\images\overwatch-9.jpg" />
+    <Content Include="Content\Project\images\overwatch-category.jpg" />
+    <Content Include="Content\Project\images\overwatch-poster.png" />
+    <Content Include="Content\Project\images\Overwatch-swiper.png" />
+    <Content Include="Content\Project\images\overwatch.jpg" />
+    <Content Include="Content\Project\images\play %281%29 %281%29.png" />
+    <Content Include="Content\Project\images\play-circle-outline.svg" />
+    <Content Include="Content\Project\images\team-img-3.png" />
+    <Content Include="Content\Project\images\team-img-4.png" />
+    <Content Include="Content\Project\images\Team1.jpg" />
+    <Content Include="Content\Project\images\Team2.jpg" />
+    <Content Include="Content\Project\images\Team3.jpg" />
+    <Content Include="Content\Project\images\Team4.jpg" />
+    <Content Include="Content\Project\images\twitter.png" />
+    <Content Include="Content\Project\images\user-regular %282%29.svg" />
+    <Content Include="Content\Project\images\user-regular.svg" />
+    <Content Include="Content\Project\images\user.svg" />
+    <Content Include="Content\Project\js\admin.js" />
+    <Content Include="Content\Project\js\all.js" />
+    <Content Include="Content\Project\js\scripts.js" />
+    <Content Include="Content\Project\Videos\Arena of Valor\arenaofvalor1.mp4" />
+    <Content Include="Content\Project\Videos\Arena of Valor\arenaofvalor10.mp4" />
+    <Content Include="Content\Project\Videos\Arena of Valor\arenaofvalor2.mp4" />
+    <Content Include="Content\Project\Videos\Arena of Valor\arenaofvalor3.mp4" />
+    <Content Include="Content\Project\Videos\Arena of Valor\arenaofvalor4.mp4" />
+    <Content Include="Content\Project\Videos\Arena of Valor\arenaofvalor5.mp4" />
+    <Content Include="Content\Project\Videos\Arena of Valor\arenaofvalor6.mp4" />
+    <Content Include="Content\Project\Videos\Arena of Valor\arenaofvalor7.mp4" />
+    <Content Include="Content\Project\Videos\Arena of Valor\arenaofvalor8.mp4" />
+    <Content Include="Content\Project\Videos\Arena of Valor\arenaofvalor9.mp4" />
+    <Content Include="Content\Project\Videos\CS GO\csgo1.mp4" />
+    <Content Include="Content\Project\Videos\CS GO\csgo10.mp4" />
+    <Content Include="Content\Project\Videos\CS GO\csgo2.mp4" />
+    <Content Include="Content\Project\Videos\CS GO\csgo3.mp4" />
+    <Content Include="Content\Project\Videos\CS GO\csgo4.mp4" />
+    <Content Include="Content\Project\Videos\CS GO\csgo5.mp4" />
+    <Content Include="Content\Project\Videos\CS GO\csgo6.mp4" />
+    <Content Include="Content\Project\Videos\CS GO\csgo7.mp4" />
+    <Content Include="Content\Project\Videos\CS GO\csgo8.mp4" />
+    <Content Include="Content\Project\Videos\CS GO\csgo9.mp4" />
+    <Content Include="Content\Project\Videos\Dota 2\Dota 2-10.mp4" />
+    <Content Include="Content\Project\Videos\Dota 2\Dota 2-2.mp4" />
+    <Content Include="Content\Project\Videos\Dota 2\Dota 2-3.mp4" />
+    <Content Include="Content\Project\Videos\Dota 2\Dota 2-4.mp4" />
+    <Content Include="Content\Project\Videos\Dota 2\Dota 2-5.mp4" />
+    <Content Include="Content\Project\Videos\Dota 2\Dota 2-6.mp4" />
+    <Content Include="Content\Project\Videos\Dota 2\Dota 2-7.mp4" />
+    <Content Include="Content\Project\Videos\Dota 2\Dota 2-8.mp4" />
+    <Content Include="Content\Project\Videos\Dota 2\Dota 2-9.mp4" />
+    <Content Include="Content\Project\Videos\Dota 2\Dota2-1.mp4" />
+    <Content Include="Content\Project\Videos\Fortnite\Fortnite1.mp4" />
+    <Content Include="Content\Project\Videos\Fortnite\Fortnite10.mp4" />
+    <Content Include="Content\Project\Videos\Fortnite\Fortnite2.mp4" />
+    <Content Include="Content\Project\Videos\Fortnite\Fortnite3.mp4" />
+    <Content Include="Content\Project\Videos\Fortnite\Fortnite4.mp4" />
+    <Content Include="Content\Project\Videos\Fortnite\Fortnite5.mp4" />
+    <Content Include="Content\Project\Videos\Fortnite\Fortnite6.mp4" />
+    <Content Include="Content\Project\Videos\Fortnite\Fortnite7.mp4" />
+    <Content Include="Content\Project\Videos\Fortnite\Fortnite8.mp4" />
+    <Content Include="Content\Project\Videos\Fortnite\Fortnite9.mp4" />
+    <Content Include="Content\Project\Videos\League of Legends Gameplay Trailer by NiceTryIan - Community Collab.mp4" />
+    <Content Include="Content\Project\Videos\League of Legends\lol1.mp4" />
+    <Content Include="Content\Project\Videos\League of Legends\lol10.mp4" />
+    <Content Include="Content\Project\Videos\League of Legends\lol2.mp4" />
+    <Content Include="Content\Project\Videos\League of Legends\lol3.mp4" />
+    <Content Include="Content\Project\Videos\League of Legends\lol4.mp4" />
+    <Content Include="Content\Project\Videos\League of Legends\lol5.mp4" />
+    <Content Include="Content\Project\Videos\League of Legends\lol6.mp4" />
+    <Content Include="Content\Project\Videos\League of Legends\lol7.mp4" />
+    <Content Include="Content\Project\Videos\League of Legends\lol8.mp4" />
+    <Content Include="Content\Project\Videos\League of Legends\lol9.mp4" />
+    <Content Include="Content\Project\Videos\Overwatch\Overwatch1.mp4" />
+    <Content Include="Content\Project\Videos\Overwatch\Overwatch10.mp4" />
+    <Content Include="Content\Project\Videos\Overwatch\Overwatch2.mp4" />
+    <Content Include="Content\Project\Videos\Overwatch\Overwatch3.mp4" />
+    <Content Include="Content\Project\Videos\Overwatch\Overwatch4.mp4" />
+    <Content Include="Content\Project\Videos\Overwatch\Overwatch5.mp4" />
+    <Content Include="Content\Project\Videos\Overwatch\Overwatch6.mp4" />
+    <Content Include="Content\Project\Videos\Overwatch\Overwatch7.mp4" />
+    <Content Include="Content\Project\Videos\Overwatch\Overwatch8.mp4" />
+    <Content Include="Content\Project\Videos\Overwatch\Overwatch9.mp4" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Management\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Management\ManagementAreaRegistration.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\OpenController.cs" />
+    <Compile Include="Controllers\PayController.cs" />
+    <Compile Include="Controllers\VideoController.cs" />
+    <Compile Include="Controllers\VideoDetailController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CategoryListViewModel.cs" />
+    <Compile Include="Models\VideoDetailViewModel.cs" />
+    <Compile Include="Models\VideoListViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Content\Project\images\overwatch-category.webp" />
+    <Content Include="Areas\Management\Views\web.config" />
+    <Content Include="Areas\Management\Views\Admin\Index.cshtml" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\SingIn.cshtml" />
+    <Content Include="Views\Account\SingUp.cshtml" />
+    <Content Include="Views\Pay\Index.cshtml" />
+    <Content Include="Views\VideoDetail\Index.cshtml" />
+    <Content Include="Views\Video\Index.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Checkout\checkout.cshtml" />
+    <Content Include="Views\Video\GetDetail.cshtml" />
+    <Content Include="Views\Open\Index.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Management\Data\" />
+    <Folder Include="Areas\Management\Views\Shared\" />
+    <Folder Include="Properties\PublishProfiles\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gameport.Business\Gameport.Business.csproj">
+      <Project>{4D628D78-1205-4E44-91B4-0ECA4938AFBD}</Project>
+      <Name>Gameport.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gameport.Core\Gameport.Core.csproj">
+      <Project>{59F3FDE1-D579-4F04-BC6D-A30EA7B470E6}</Project>
+      <Name>Gameport.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gameport.Entities\Gameport.Entities.csproj">
+      <Project>{E437B5AC-52FD-46CC-BC07-42A407890E87}</Project>
+      <Name>Gameport.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64880</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44318/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\PostSharp.4.2.17\tools\PostSharp.targets" Condition="Exists('..\packages\PostSharp.4.2.17\tools\PostSharp.targets')" />
+  <Target Name="EnsurePostSharpImported" BeforeTargets="BeforeBuild" Condition="'$(PostSharp30Imported)' == ''">
+    <Error Condition="!Exists('..\packages\PostSharp.4.2.17\tools\PostSharp.targets')" Text="This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://www.postsharp.net/links/nuget-restore." />
+    <Error Condition="Exists('..\packages\PostSharp.4.2.17\tools\PostSharp.targets')" Text="The build restored NuGet packages. Build the project again to include these packages in the build. For more information, see http://www.postsharp.net/links/nuget-restore." />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

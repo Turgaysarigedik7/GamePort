@@ -1,0 +1,136 @@
+﻿@model Gameport.MvcWebUI.Models.VideoDetailViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Player CSS -->
+@*<link href="~/Content/lib/Bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">*@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/4.6.3/css/ionicons.min.css" rel="stylesheet">
+
+<link href="~/Content/lib/Plyr/css/plyr.css" rel="stylesheet" type="text/css">
+<!-- Player CSS -->
+<!-- Tabs CSS -->
+
+<link href="~/Content/Project/css/Mystyle.css" rel="stylesheet" type="text/css">
+<!-- Tabs CSS -->
+<!-- Tabs JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $(".tab-menu a").click(function (event) {
+            event.preventDefault();
+            $(this).parent().addClass("current");
+            $(this).parent().siblings().removeClass("current");
+            var tab = $(this).attr("href");
+            $(".tab-content").not(tab).css("display", "none");
+            $(tab).fadeIn();
+        });
+    });
+</script>
+<!-- Tabs JS -->
+
+
+
+<section style="position:relative; background-color: #000000; height: 90%;">
+    <!-- player -->
+    <div id="playerDiv" class="col-12 col-lg-8">
+        <video controls="" crossorigin="" playsinline="" poster="~/Content/Project/images/@Model.VideoDetails.Poster" id="player">
+            <!-- Video files -->
+            <source src="~/Content/Project/Videos/@Model.VideoDetails.Adress" type="video/mp4" size="576">
+            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-720p.mp4" type="video/mp4" size="720">
+            <source src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-1080p.mp4" type="video/mp4" size="1080">
+
+            <!-- Caption files -->
+            <track kind="captions" label="English" srclang="en" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default="">
+            <track kind="captions" label="Français" srclang="fr" src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.fr.vtt">
+
+            <!-- Fallback for browsers that don't support the <video> element -->
+            <a href="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4" download="">Download</a>
+            </track></track>
+        </video>
+    </div>
+    <!-- end player -->
+</section>
+
+
+<section style=" color: white;">
+    <div style="padding: 3% 10%;">
+        <div>
+            <h1 style="font-size: xx-large;">Sen Çal Kapımı</h1>
+            <h4 style="color: darkred;">1. Böüm 3.Fragman</h4>
+        </div>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque possimus cupiditate iure error eos
+                explicabo ut voluptatum quasi neque praesentium!
+                At cupiditate minus quas consequuntur exercitationem voluptates iusto? Iure, voluptatibus.
+            </p>
+        </div>
+        <div>
+            <h5 style="font-size: medium; font-weight: bolder;">Oyuncular:</h5>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Unde, natus illo molestias
+                repellat odit enim ut est saepe mollitia voluptas veniam
+                repudiandae consequatur cumque officiis non, perspiciatis adipisci, ullam aut!
+            </p>
+            <h5 style="font-weight: bolder; font-size: medium;">Kategoriler:</h5>
+            <h5>Romantik Komedi</h5>
+        </div>
+    </div>
+</section>
+
+<section style="height: 100%;">
+    <div style="padding:0 7%;">
+
+        <ul class="tab-menu">
+            <li class="current"><a href="#tab1">1. Sezon</a></li>
+            <li><a href="#tab2">2. Sezon</a></li>
+            <li><a href="#tab3">3. Sezon</a></li>
+        </ul>
+        <div class="tab-container">
+            <div id="tab1" class="tab-content">
+                <div class="cards">
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                </div>
+            </div>
+            <div id="tab2" class="tab-content">
+                <div class="cards">
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                </div>
+            </div>
+            <div id="tab3" class="tab-content">
+                <div class="cards">
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                    <a href="/Video/Index" class="card"><img id="card-img" style="position: absolute;" src="~/Content/Project/images/thumbnail (1).jpg"><img class="card-play" style="position: relative;" src="~/Content/Project/images/play (1) (1).png"></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- JS -->
+@*<script src="~/Content/lib/Jquery/js/jquery-3.3.1.min.js"></script>*@
+<script src="~/Content/lib/Owl.Carousel/js/owl.carousel.min.js"></script>
+<script src="~/Content/lib/Jquery/js/jquery.mCustomScrollbar.min.js"></script>
+<script src="~/Content/lib/Jquery/js/jquery.morelines.min.js"></script>
+<script src="~/Content/lib/Plyr/js/plyr.min.js"></script>
+<!-- JS -->

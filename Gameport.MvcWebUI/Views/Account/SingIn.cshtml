@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "SingIn";
+    Layout = null;
+}
+<link href="~/Content/Project/css/MyStyle.css" rel="stylesheet" />
+<style>
+
+    .box {
+        width: 30%;
+        padding: 40px;
+        position: relative;
+        top: 50%;
+        left: 50%;
+        margin-bottom: 5%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+
+        .box h1 {
+            color: white;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .box input[type="text"], .box input[type="password"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #3498db;
+            padding: 14px 10px;
+            width: 200px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s;
+        }
+
+            .box input[type="text"]:focus, .box input[type="password"]:focus {
+                width: 280px;
+                border-color: #2ecc71;
+            }
+
+        .box input[type="submit"] {
+            border: 0;
+            background: none;
+            display: block;
+            margin: 20px auto;
+            text-align: center;
+            border: 2px solid #2ecc71;
+            padding: 14px 40px;
+            outline: none;
+            color: white;
+            border-radius: 24px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+
+            .box input[type="submit"]:hover {
+                background: #2ecc71;
+            }
+
+        .box a {
+            font-size: small;
+            color: white;
+            text-decoration: none;
+        }
+
+    #movieHeader {
+        top: 0;
+        width: 70%;
+    }
+</style>
+<header id="movieHeader">
+    <a class="logo"><img src="~/Content/Project/images/logo.png"></a>
+
+</header>
+@using (Html.BeginForm("SingIn", "Account", FormMethod.Post, new { @class = "box" }))
+{
+    <h1>LOGIN</h1>
+    <input type="text" id="userName" name="userName" placeholder="user name">
+    <input type="password" id="password" name="password" placeholder="password">
+
+
+    <input type="submit" value="Login">
+
+
+    <input type="checkbox" id="beniHatirla" name="beniHatirla" value="true">
+    <label style="margin-right:5%" for="beniHatirla"> Beni hatırla</label>
+    <a href="#">Did you forget your password?</a>
+    <input type="submit" value="Google ile oturum aç">
+    <label style="display:block;margin-top:5%">Gameport'a kayıt olmak ister misiniz? <a style="display:inline;font-size:medium" href="#">Şimdi kaydolun.</a></label>
+
+
+}
+
+
+
+
+
